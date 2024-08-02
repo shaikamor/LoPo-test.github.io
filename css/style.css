@@ -139,6 +139,9 @@ nav ul li {
 /* Add your new form styles below */
 
 /* Form Styles for Login and Register Pages */
+/* Existing styles... */
+
+/* Form Styles */
 .form-container {
     width: 300px;
     margin: 50px auto;
@@ -146,18 +149,15 @@ nav ul li {
     background-color: #f4f4f4;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
-
 .form-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .form-container label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
 .form-container input {
     width: 100%;
     padding: 10px;
@@ -165,7 +165,6 @@ nav ul li {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 .form-container button {
     width: 100%;
     padding: 10px;
@@ -177,4 +176,4 @@ nav ul li {
     cursor: pointer;
 }
 
-/* Continue with other styles */
+/* Additional existing styles... */
