@@ -5,16 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.getElementById('logoutButton');
     const welcomeMessage = document.getElementById('welcomeMessage');
 
-    if (isLoggedIn) {
+    if (isLoggedIn === 'true') {  // Updated: Checking if the value is 'true'
         loginMenuItem.style.display = 'none';
         logoutMenuItem.style.display = 'block';
         const userFullName = localStorage.getItem('userFullName');
-        welcomeMessage.innerHTML = `Welcome back, ${userFullName}!`;
+        if (userFullName) {
+            welcomeMessage.innerHTML = `Welcome back, ${userFullName}!`;
+        }
     }
 
-    logoutButton.addEventListener('click', () => {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userFullName');
-        window.location.href = 'index.html'; // Redirect to home page after logout
-    });
+    // Handling logout
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userFullName');
+            window.location.href = 'index.html'; // Redirect to home page after logout
+        });
+    }
 });
