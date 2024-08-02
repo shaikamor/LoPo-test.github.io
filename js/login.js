@@ -29,3 +29,35 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Invalid OTP');
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const sendOtpButton = document.getElementById('sendOtpButton');
+    const otpGroup = document.querySelector('.otp-group');
+    const loginButton = document.getElementById('loginButton');
+
+    otpGroup.style.display = 'none';
+    loginButton.style.display = 'none';
+
+    sendOtpButton.addEventListener('click', () => {
+        // Simulate OTP sending and showing OTP input
+        otpGroup.style.display = 'block';
+        sendOtpButton.style.display = 'none';
+        loginButton.style.display = 'block';
+    });
+
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Simulate successful login
+        localStorage.setItem('isLoggedIn', 'true');
+
+        // Redirect to home page or hide login form
+        window.location.href = 'index.html'; // Redirect to home page
+    });
+
+    // Redirect logged-in users back to the homepage
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+        window.location.href = 'index.html';
+    }
+});
