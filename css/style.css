@@ -278,13 +278,6 @@ footer {
     display: flex;
     align-items: center;
 }
-/* General styles for the entire website */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 /* Specific styles for the login page */
 .login-container {
     display: flex;
