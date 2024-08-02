@@ -274,3 +274,8 @@ footer {
 #login-link a:hover, #cart-link a:hover {
     background-color: #4cae4c;
 }
+.header-right {
+    float: right;
+    display: flex;
+    align-items: center;
+}
