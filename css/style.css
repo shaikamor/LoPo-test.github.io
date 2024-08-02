@@ -177,5 +177,16 @@ button {
 
     cursor: pointer;
 }
+/* Add a class to your form for more specific styling */
+.login-form {
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
 /* Additional existing styles... */
