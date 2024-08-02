@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.getElementById('logoutButton');
     const welcomeMessage = document.getElementById('welcomeMessage');
 
-    if (isLoggedIn === 'true') {  // Updated: Checking if the value is 'true'
-        loginMenuItem.style.display = 'none';
-        logoutMenuItem.style.display = 'block';
-        const userFullName = localStorage.getItem('userFullName');
-        if (userFullName) {
-            welcomeMessage.innerHTML = `Welcome back, ${userFullName}!`;
+    if (loginMenuItem && logoutMenuItem && welcomeMessage) {  // Check that elements exist
+        if (isLoggedIn === 'true') {
+            loginMenuItem.style.display = 'none';
+            logoutMenuItem.style.display = 'block';
+            const userFullName = localStorage.getItem('userFullName');
+            if (userFullName) {
+                welcomeMessage.innerHTML = `Welcome back, ${userFullName}!`;
+            }
         }
     }
 
