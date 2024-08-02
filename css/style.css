@@ -1,0 +1,113 @@
+/* css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e0e0e0;
+}
+
+main .hero h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main .hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+main .hero .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* css/style.css */
+
+/* Additional Styles for Category and Review Pages */
+.category, .review, .search {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.category h2, .review h2, .search h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.review form, .search form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review input, .search input, .review textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.review button, .search button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review button:hover, .search button:hover {
+    background-color: #45a049;
+}
