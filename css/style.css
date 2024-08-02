@@ -188,5 +188,14 @@ h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
+/* Assuming your header has a class named 'header' and is inside a container with class 'container' */
+
+.form-container {
+  text-align: center;
+}
+
+.header {
+  /* Other styles for the header */
+}
 
 /* Additional existing styles... */
