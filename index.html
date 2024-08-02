@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+     <!-- Header with Brand Logo and Navigation -->
     <header>
-        <div class="logo">
-            <h1>My Food & Grocery App</h1>
-        </div>
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Brand Logo" id="brand-logo">
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -18,7 +19,8 @@
                 <li><a href="category/fruits.html">Fruits</a></li>
                 <li><a href="category/groceries.html">Groceries</a></li>
                 <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li id="login-link"><a href="login.html">Login</a></li>
+                <li id="welcome-message" style="display: none;">Welcome, User!</li>
             </ul>
         </nav>
     </header>
