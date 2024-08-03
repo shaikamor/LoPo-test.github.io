@@ -1,112 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    const loginMenuItem = document.getElementById('loginMenuItem');
-    const logoutMenuItem = document.getElementById('logoutMenuItem');
-    const logoutButton = document.getElementById('logoutButton');
-    const welcomeMessage = document.getElementById('welcomeMessage');
-
-    // Check login status and update UI
-    if (isLoggedIn === 'true') {
-        if (loginMenuItem) loginMenuItem.style.display = 'none';
-        if (logoutMenuItem) logoutMenuItem.style.display = 'block';
-        const userFullName = localStorage.getItem('userFullName');
-        if (welcomeMessage && userFullName) {
-            welcomeMessage.innerHTML = `Welcome back, ${userFullName}!`;
-        }
-    }
-
-    // Handle logout
-    if (logoutButton) {
-        logoutButton.addEventListener('click', () => {
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('userFullName');
-            window.location.href = 'index.html'; // Redirect to home page after logout
-        });
-    }
-
-    document.getElementById('sendOtpButton').addEventListener('click', function() {
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-
-    if (fullName && email && phoneNumber) {
-        // Simulate sending OTP
-        alert('OTP sent to ' + phoneNumber);
-
-        // Show OTP input field and Login button
-        document.querySelector('.otp-group').style.display = 'block';
-        document.getElementById('sendOtpButton').style.display = 'none';
-        document.getElementById('loginButton').style.display = 'block';
-    } else {
-        alert('Please fill all fields');
-    }
-});
-    // Handle login form submission
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent form submission
-
-            // Simulate OTP validation
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const otp = document.getElementById('otp').value;
-
-            if (otp === "123456") { // Dummy OTP check
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('userFullName', fullName);
-
-                // Redirect to the home page
-                window.location.href = 'index.html';
-            } else {
-                alert("Invalid OTP. Please try again.");
-            }
-        });
-    }
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    const loginMenuItem = document.getElementById('loginMenuItem');
-    const logoutMenuItem = document.getElementById('logoutMenuItem');
-    const logoutButton = document.getElementById('logoutButton');
-
-    const initialLogin = document.getElementById('initialLogin');
-    const otpSection = document.getElementById('otpSection');
     const sendOtpButton = document.getElementById('sendOtpButton');
+    const loginButton = document.getElementById('loginButton');
+    const otpGroup = document.getElementById('otpGroup');
 
-    // Check login status and update UI
-    if (isLoggedIn === 'true') {
-        loginMenuItem.style.display = 'none';
-        logoutMenuItem.style.display = 'block';
-    }
+    const fullNameGroup = document.getElementById('fullNameGroup');
+    const emailGroup = document.getElementById('emailGroup');
+    const phoneNumberGroup = document.getElementById('phoneNumberGroup');
+    const formTitle = document.getElementById('formTitle');
 
-    // Handle logout
-    logoutButton.addEventListener('click', () => {
-        localStorage.removeItem('isLoggedIn');
-        window.location.href = 'index.html'; // Redirect to home page after logout
-    });
-
-    // Handle OTP send button click
+    // Handle Send OTP button click
     sendOtpButton.addEventListener('click', () => {
-        initialLogin.style.display = 'none';
-        otpSection.style.display = 'block';
-
-        // Simulate sending OTP (for now we'll just log it)
+        // Simulate OTP sending logic
         console.log("OTP sent to user's phone");
+
+        // Hide the registration fields and send OTP button, show the OTP input and Login button
+        formTitle.textContent = "Enter OTP";
+        fullNameGroup.style.display = 'none';
+        emailGroup.style.display = 'none';
+        phoneNumberGroup.style.display = 'none';
+        sendOtpButton.style.display = 'none';
+        otpGroup.style.display = 'block';
+        loginButton.style.display = 'block';
     });
 
     // Handle login form submission
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent the form from submitting
 
-        // Simulate OTP validation
+        // Simulate OTP verification (using a dummy OTP "1234")
         const otp = document.getElementById('otp').value;
 
-        if (otp === "1234") { // Dummy OTP check, now 4 digits
+        if (otp === "1234") { // Replace with actual OTP validation logic
             localStorage.setItem('isLoggedIn', 'true');
-            window.location.href = 'index.html'; // Redirect to home page
+            window.location.href = 'index.html'; // Redirect to home page after login
         } else {
             alert("Invalid OTP. Please try again.");
         }
