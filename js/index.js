@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (otp === "1234") { // Replace with actual OTP validation logic
                 localStorage.setItem('isLoggedIn', 'true');
-                window.location.href = 'account.html'; // Redirect to home page after login
+                window.location.href = 'account-details.html'; // Redirect to home page after login
             } else {
                 alert("Invalid OTP. Please try again.");
             }
