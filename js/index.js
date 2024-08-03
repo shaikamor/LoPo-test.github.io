@@ -22,15 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         otpGroup.style.display = 'block';
         loginButton.style.display = 'block';
     });
-    // Handle logout
-    if (logoutButton) {
-        logoutButton.addEventListener('click', () => {
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('userFullName');
-            window.location.href = 'index.html'; // Redirect to home page after logout
-        });
-    }
-
 document.getElementById('sendOtpButton').addEventListener('click', function() {
     const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('email').value;
@@ -63,4 +54,22 @@ document.getElementById('sendOtpButton').addEventListener('click', function() {
             alert("Invalid OTP. Please try again.");
         }
     });
+});
+  // Handle logout
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    }
+
+    // Check if the user is logged in
+    if (localStorage.getItem('isLoggedIn')) {
+        if (logoutButton) logoutButton.style.display = 'inline-block'; // Show the logout button
+    } else {
+        // If not logged in, redirect to the login page
+        if (window.location.pathname !== '/login.html') {
+            window.location.href = 'login.html';
+        }
+    }
 });
