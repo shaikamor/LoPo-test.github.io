@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <!-- Header with Brand Logo and Navigation -->
+    <!-- Header with Brand Logo and Navigation -->
     <header>
         <a href="index.html">
-            <img src="assest/logo.png" alt="Brand Logo" id="brand-logo">
+            <img src="assets/logo.png" alt="Brand Logo" id="brand-logo">
         </a>
         <nav>
             <ul>
@@ -19,13 +19,19 @@
                 <li><a href="category/fruits.html">Fruits</a></li>
                 <li><a href="category/groceries.html">Groceries</a></li>
                 <li><a href="cart.html">Cart</a></li>
-                <li id="loginMenuItem"><a href="login.html">Login</a></li>
+                <li id="accountMenuItem">
+                    <a href="#" id="accountDropdown">Account</a>
+                    <ul id="accountDropdownContent" class="dropdown-content">
+                        <li id="loginLink"><a href="login.html">Login</a></li>
+                        <li id="registerLink"><a href="register.html">Register</a></li>
+                        <li id="logoutLink" style="display:none;"><a href="#" id="logoutButton">Logout</a></li>
+                    </ul>
+                </li>
                 <li id="welcome-message" style="display: none;">Welcome, User!</li>
-                <li id="logoutMenuItem" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section class="hero">
             <h2>Welcome to the Best Food & Grocery App!</h2>
@@ -33,7 +39,7 @@
             <a href="category/vegetables.html" class="btn">Shop Now</a>
         </section>
     </main>
-    
+
     <footer>
         <p>&copy; 2024 My Food & Grocery App. All rights reserved.</p>
     </footer>
