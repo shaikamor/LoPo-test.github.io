@@ -55,3 +55,11 @@ document.getElementById('sendOtpButton').addEventListener('click', function() {
         }
     });
 });
+// Handle logout
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userFullName');
+            window.location.href = 'index.html'; // Redirect to home page after logout
+        });
+    }
