@@ -61,3 +61,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+// Mock user data
+    const user = {
+        isLoggedIn: false,
+        name: 'John Doe'
+    };
+
+    function updateUIBasedOnUser() {
+        if (user.isLoggedIn) {
+            signInMenuItem.style.display = 'none';
+            userNameMenuItem.style.display = 'block';
+            userNameMenuItem.innerHTML = `Welcome, ${user.name}`;
+            userNameMenuItem.addEventListener('click', () => {
+                accountSection.style.display = 'block';
+                mainContent.style.display = 'none';
+            });
+        } else {
+            signInMenuItem.style.display = 'block';
+            userNameMenuItem.style.display = 'none';
+            accountSection.style.display = 'none';
+            mainContent.style.display = 'block';
+        }
+    }
+
+    accountLink.addEventListener('click', function() {
+        accountSection.style.display = 'block';
+        mainContent.style.display = 'none';
+    });
+
+    logoutButton.addEventListener('click', function() {
+        user.isLoggedIn = false;
+        updateUIBasedOnUser();
+    });
+
+    updateUIBasedOnUser();
+});
