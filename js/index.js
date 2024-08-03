@@ -65,3 +65,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const loginMenuItem = document.getElementById('loginMenuItem');
+    const logoutMenuItem = document.getElementById('logoutMenuItem');
+    const logoutButton = document.getElementById('logoutButton');
+
+    const initialLogin = document.getElementById('initialLogin');
+    const otpSection = document.getElementById('otpSection');
+    const sendOtpButton = document.getElementById('sendOtpButton');
+
+    // Check login status and update UI
+    if (isLoggedIn === 'true') {
+        loginMenuItem.style.display = 'none';
+        logoutMenuItem.style.display = 'block';
+    }
+
+    // Handle logout
+    logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'index.html'; // Redirect to home page after logout
+    });
+
+    // Handle OTP send button click
+    sendOtpButton.addEventListener('click', () => {
+        initialLogin.style.display = 'none';
+        otpSection.style.display = 'block';
+
+        // Simulate sending OTP (for now we'll just log it)
+        console.log("OTP sent to user's phone");
+    });
+
+    // Handle login form submission
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        // Simulate OTP validation
+        const otp = document.getElementById('otp').value;
+
+        if (otp === "1234") { // Dummy OTP check, now 4 digits
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'index.html'; // Redirect to home page
+        } else {
+            alert("Invalid OTP. Please try again.");
+        }
+    });
+});
