@@ -1,54 +1,45 @@
-/* Account Section Styles */
-#account-content {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const loginSection = document.getElementById('login-register-section');
+    const accountDetailsSection = document.getElementById('user-account-details');
+    const ordersSection = document.getElementById('orders-section');
+    const securitySection = document.getElementById('security-section');
+    const helpSupportSection = document.getElementById('help-support-section');
+    
+    // Simulating user login state
+    const isLoggedIn = false; // Change this to true if the user is logged in
 
-#account-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
+    if (isLoggedIn) {
+        loginSection.style.display = 'none';
+        accountDetailsSection.style.display = 'block';
+        ordersSection.style.display = 'block';
+        securitySection.style.display = 'block';
+        helpSupportSection.style.display = 'block';
+    } else {
+        loginSection.style.display = 'block';
+        accountDetailsSection.style.display = 'none';
+        ordersSection.style.display = 'none';
+        securitySection.style.display = 'none';
+        helpSupportSection.style.display = 'none';
+    }
 
-.input-group {
-    margin-bottom: 15px;
-}
+    // Handle login form submission
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Here you would handle the actual login logic, including OTP verification
+        // For now, just simulate a successful login
+        loginSection.style.display = 'none';
+        accountDetailsSection.style.display = 'block';
+        ordersSection.style.display = 'block';
+        securitySection.style.display = 'block';
+        helpSupportSection.style.display = 'block';
+    });
 
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button#logoutButton {
-    margin-top: 20px;
-    background-color: #dc3545;
-}
-
-button#saveChangesButton {
-    background-color: #007bff;
-    margin-bottom: 20px;
-}
+    // Handle logout
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        loginSection.style.display = 'block';
+        accountDetailsSection.style.display = 'none';
+        ordersSection.style.display = 'none';
+        securitySection.style.display = 'none';
+        helpSupportSection.style.display = 'none';
+    });
+});
