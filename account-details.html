@@ -7,60 +7,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Header with Brand Logo and Navigation -->
     <header>
         <a href="index.html">
             <img src="assets/logo.png" alt="Brand Logo" id="brand-logo">
         </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li id="userMenuItem"><a href="account.html">Account</a></li>
-            </ul>
-        </nav>
     </header>
-
+    
     <main>
-        <div id="account-container">
-            <!-- Iframe to embed login and register pages -->
-            <div id="login-register-section">
-                <iframe id="contentFrame" src="login.html" frameborder="0" width="100%" height="500px"></iframe>
-                <p>
-                    Not an existing user? <a href="#" id="showRegister">Sign Up</a>
-                </p>
-                <p>
-                    Already have an account? <a href="#" id="showLogin">Login</a>
-                </p>
+        <section id="account-section">
+            <div id="account-content">
+                <!-- Account Navigation -->
+                <nav id="account-nav">
+                    <ul>
+                        <li><a href="account-session/account-details.html">Account Details</a></li>
+                        <li><a href="account-session/orders.html">My Orders</a></li>
+                        <li><a href="account-session/security.html">Security</a></li>
+                        <li><a href="account-session/help-support.html">Help & Support</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Logout Button -->
+                <div id="logout-section">
+                    <button id="logoutButton">Logout</button>
+                </div>
             </div>
-
-            <!-- Account Details, Orders, Security, Help & Support -->
-            <div id="account-details" style="display:none;">
-                <h2>Account Details</h2>
-                <!-- Account details form goes here -->
-            </div>
-            <div id="orders" style="display:none;">
-                <h2>Orders</h2>
-                <!-- Orders list goes here -->
-            </div>
-            <div id="security" style="display:none;">
-                <h2>Security</h2>
-                <!-- Security settings go here -->
-            </div>
-            <div id="help-support" style="display:none;">
-                <h2>Help & Support</h2>
-                <!-- Help and support info goes here -->
-            </div>
-
-            <!-- Logout Button -->
-            <div id="logout-section" style="display: none;">
-                <button id="logoutButton">Logout</button>
-            </div>
-        </div>
+        </section>
     </main>
     
     <footer>
         <p>&copy; 2024 My Food & Grocery App. All rights reserved.</p>
     </footer>
 
-    <script src="js/account.js"></script>
+    <script src="js/account-pages.js"></script>
 </body>
 </html>
