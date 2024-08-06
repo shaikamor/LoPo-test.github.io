@@ -641,13 +641,14 @@ header {
   align-items: center;
   padding: 15px;
   background-color: /* Header styles */
+
 /* Header styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #4CAF50; /* Flipkart's header color */
+  background-color: #2874f0; /* Flipkart's header color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -684,11 +685,11 @@ header {
 }
 
 .nav-links {
-  flex: 1;
   display: flex;
   justify-content: center; /* Centers the navigation links */
   align-items: center;
   gap: 20px;
+  flex: 1;
 }
 
 .nav-links a {
