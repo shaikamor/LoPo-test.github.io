@@ -702,3 +702,12 @@ header {
   color: #fff;
   font-weight: bold;
 }
+.search-bar {
+  /* Ensure the container has enough width */
+  width: 300px; /* Adjust as needed */
+}
+.search-bar input, .search-bar button {
+  /* Adjust height and padding as needed */
+  height: 40px;
+  padding: 0 10px;
+}
