@@ -2,10 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendOtpButton = document.getElementById('sendOtpButton');
   const loginButton = document.getElementById('loginButton');
   const otpGroup = document.getElementById('otpGroup');
+  const fullNameGroup = document.getElementById('fullNameGroup');
+  const emailGroup = document.getElementById('emailGroup');
+  const phoneNumberGroup = document.getElementById('phoneNumberGroup');
+  const formTitle = document.getElementById('formTitle');
 
   // Handle Send OTP button click
   sendOtpButton.addEventListener('click', () => {
     console.log("OTP sent to user's phone");
+
+    // Simulate OTP sending and show OTP input
+    // In a real application, you would call an API to send the OTP
+    alert("Simulated OTP sent: 1234");
 
     // Hide registration fields and send OTP button, show OTP input and Login button
     formTitle.textContent = "Enter OTP";
@@ -27,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const otp = document.getElementById('otp').value;
 
       if (otp === "1234") { // Replace with actual OTP validation logic
+        alert("Login successful!");
         localStorage.setItem('isLoggedIn', 'true');
         window.location.href = 'index.html'; // Redirect to home page after login
       } else {
@@ -35,13 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-// Mock user data
+
+// Handle user login state
 const user = {
   isLoggedIn: false,
   name: 'John Doe'
 };
 
 function updateUIBasedOnUser() {
+  const signInMenuItem = document.getElementById('signInMenuItem');
+  const userNameMenuItem = document.getElementById('userNameMenuItem');
+  const logoutButton = document.getElementById('logoutButton');
+  const accountSection = document.getElementById('accountSection');
+  const mainContent = document.getElementById('mainContent');
+
   if (user.isLoggedIn) {
     signInMenuItem.style.display = 'none';
     userNameMenuItem.style.display = 'block';
@@ -59,8 +75,6 @@ function updateUIBasedOnUser() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  const signInMenuItem = document.getElementById('signInMenuItem');
-  const userNameMenuItem = document.getElementById('userNameMenuItem');
   const logoutButton = document.getElementById('logoutButton');
 
   updateUIBasedOnUser();
