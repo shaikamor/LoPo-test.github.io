@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulate OTP sending and show OTP input
     // In a real application, you would call an API to send the OTP
-    alert("Simulated OTP sent: 1234");
+    alert("Simulated OTP sent sucessfully");
 
     // Hide registration fields and send OTP button, show OTP input and Login button
     formTitle.textContent = "Enter OTP";
