@@ -663,18 +663,18 @@ header {
   padding: 10px;
   border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
   box-sizing: border-box;
-  height: 38px; /* Set the height to match the button */
+  height: 38px; /* Match height with the button */
 }
 
 .search-bar button {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-left: none; /* Removes the border between input and button */
-  padding: 10px 15px;
+  padding: 9px 15px; /* Adjust padding to fit the input height */
   cursor: pointer;
   border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
   box-sizing: border-box;
-  height: 38px; /* Set the height to match the input */
+  height: 38px; /* Match height with the input */
 }
 
 .nav-links {
