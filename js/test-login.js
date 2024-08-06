@@ -2,88 +2,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendOtpButton = document.getElementById('sendOtpButton');
   const loginButton = document.getElementById('loginButton');
   const otpGroup = document.getElementById('otpGroup');
-  const fullNameGroup = document.getElementById('fullNameGroup');
-  const emailGroup = document.getElementById('emailGroup');
-  const phoneNumberGroup = document.getElementById('phoneNumberGroup');
-  const formTitle = document.getElementById('formTitle');
+  const userNameMenuItem = document.getElementById('userNameMenuItem');
+  const signInMenuItem = document.getElementById('signInMenuItem');
+  const logoutMenuItem = document.getElementById('logoutMenuItem');
+
+  // Simulate a user login with a dummy user
+  let user = JSON.parse(localStorage.getItem('user')) || {
+    isLoggedIn: false,
+    name: ''
+  };
+
+  // Function to update the UI based on login status
+  function updateUI() {
+    if (user.isLoggedIn) {
+      signInMenuItem.style.display = 'none';
+      userNameMenuItem.style.display = 'inline-block';
+      userNameMenuItem.textContent = `Welcome, ${user.name}`;
+      logoutMenuItem.style.display = 'inline-block';
+    } else {
+      signInMenuItem.style.display = 'inline-block';
+      userNameMenuItem.style.display = 'none';
+      logoutMenuItem.style.display = 'none';
+    }
+  }
+
+  // Call the function to update the UI initially
+  updateUI();
 
   // Handle Send OTP button click
-  sendOtpButton.addEventListener('click', () => {
-    console.log("OTP sent to user's phone");
-
-    // Simulate OTP sending and show OTP input
-    // In a real application, you would call an API to send the OTP
-    alert("Simulated OTP sent: 1234");
-
-    // Hide registration fields and send OTP button, show OTP input and Login button
-    formTitle.textContent = "Enter OTP";
-    fullNameGroup.style.display = 'none';
-    emailGroup.style.display = 'none';
-    phoneNumberGroup.style.display = 'none';
-    sendOtpButton.style.display = 'none';
+  sendOtpButton?.addEventListener('click', () => {
+    // Hide registration fields and show OTP input and Login button
     otpGroup.style.display = 'block';
+    sendOtpButton.style.display = 'none';
     loginButton.style.display = 'block';
   });
 
   // Handle login form submission
   const loginForm = document.getElementById('loginForm');
-  if (loginForm) {
-    loginForm.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent the form from submitting
+  loginForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-      // Simulate OTP verification (using a dummy OTP "1234")
-      const otp = document.getElementById('otp').value;
+    // Simulate OTP validation (with dummy OTP "1234")
+    const otp = document.getElementById('otp').value;
+    if (otp === "1234") {
+      // Set the user as logged in
+      user.isLoggedIn = true;
+      user.name = document.getElementById('fullName').value;
+      localStorage.setItem('user', JSON.stringify(user));
 
-      if (otp === "1234") { // Replace with actual OTP validation logic
-        alert("Login successful!");
+      // Update UI and redirect to the homepage
+      updateUI();
+      window.location.href = 'index.html';
+    } else {
+      alert("Invalid OTP. Please try again.");
+    }
+  });
 
-        // Save user login state and name in localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userName', document.getElementById('fullName').value);
-        
-        window.location.href = 'index.html'; // Redirect to home page after login
-      } else {
-        alert("Invalid OTP. Please try again.");
-      }
-    });
-  }
-});
-
-// Handle user login state
-function updateUIBasedOnUser() {
-  const signInMenuItem = document.getElementById('signInMenuItem');
-  const userNameMenuItem = document.getElementById('userNameMenuItem');
-  const logoutButton = document.getElementById('logoutButton');
-  const accountSection = document.getElementById('accountSection');
-  const mainContent = document.getElementById('mainContent');
-
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
-  const userName = localStorage.getItem('userName');
-
-  if (isLoggedIn === 'true' && userName) {
-    signInMenuItem.style.display = 'none';
-    userNameMenuItem.style.display = 'block';
-    userNameMenuItem.innerHTML = `Welcome, ${userName}`;
-    userNameMenuItem.addEventListener('click', () => {
-      accountSection.style.display = 'block';
-      mainContent.style.display = 'none';
-    });
-  } else {
-    signInMenuItem.style.display = 'block';
-    userNameMenuItem.style.display = 'none';
-    accountSection.style.display = 'none';
-    mainContent.style.display = 'block';
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const logoutButton = document.getElementById('logoutButton');
-
-  updateUIBasedOnUser();
-
-  logoutButton.addEventListener('click', function() {
-    localStorage.setItem('isLoggedIn', 'false');
-    localStorage.removeItem('userName');
-    updateUIBasedOnUser();
+  // Handle logout
+  logoutMenuItem?.addEventListener('click', () => {
+    user.isLoggedIn = false;
+    localStorage.removeItem('user');
+    updateUI();
   });
 });
