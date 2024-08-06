@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulate OTP sending and show OTP input
     // In a real application, you would call an API to send the OTP
-    alert("Simulated OTP sent sucessfully");
+    alert("Simulated OTP sent: 1234");
 
     // Hide registration fields and send OTP button, show OTP input and Login button
     formTitle.textContent = "Enter OTP";
@@ -36,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (otp === "1234") { // Replace with actual OTP validation logic
         alert("Login successful!");
+
+        // Save user login state and name in localStorage
         localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userName', document.getElementById('fullName').value);
+        
         window.location.href = 'index.html'; // Redirect to home page after login
       } else {
         alert("Invalid OTP. Please try again.");
@@ -46,11 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Handle user login state
-const user = {
-  isLoggedIn: false,
-  name: 'John Doe'
-};
-
 function updateUIBasedOnUser() {
   const signInMenuItem = document.getElementById('signInMenuItem');
   const userNameMenuItem = document.getElementById('userNameMenuItem');
@@ -58,10 +57,13 @@ function updateUIBasedOnUser() {
   const accountSection = document.getElementById('accountSection');
   const mainContent = document.getElementById('mainContent');
 
-  if (user.isLoggedIn) {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const userName = localStorage.getItem('userName');
+
+  if (isLoggedIn === 'true' && userName) {
     signInMenuItem.style.display = 'none';
     userNameMenuItem.style.display = 'block';
-    userNameMenuItem.innerHTML = `Welcome, ${user.name}`;
+    userNameMenuItem.innerHTML = `Welcome, ${userName}`;
     userNameMenuItem.addEventListener('click', () => {
       accountSection.style.display = 'block';
       mainContent.style.display = 'none';
@@ -80,7 +82,8 @@ document.addEventListener("DOMContentLoaded", function() {
   updateUIBasedOnUser();
 
   logoutButton.addEventListener('click', function() {
-    user.isLoggedIn = false;
+    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('userName');
     updateUIBasedOnUser();
   });
 });
