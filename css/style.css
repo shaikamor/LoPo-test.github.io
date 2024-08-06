@@ -640,7 +640,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #2874f0; /* Flipkart's header color */
+  background-color: #4CAF50; /* Flipkart's header color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -663,6 +663,7 @@ header {
   border: none;
   outline: none;
   padding: 10px;
+  border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
 }
 
 .search-bar button {
@@ -670,6 +671,7 @@ header {
   border: none;
   padding: 10px 15px;
   cursor: pointer;
+  border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
 }
 
 .actions {
