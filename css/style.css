@@ -639,7 +639,7 @@ footer {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding: 15px;
   background-color: #2874f0; /* Flipkart's header color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -653,36 +653,39 @@ header {
   flex: 1;
   display: flex;
   align-items: center;
-  margin: 0 20px;
+  margin: 10px 20px;
   justify-content: center; /* Center the search bar and button */
 }
 
 .search-container input {
-  flex: 1;
-  border: 1px solid #ccc;
-  outline: none;
-  padding: 10px;
+  flex: 1;  
+  border: 2px solid #ccc;
+  outline:#ccc  ;
+  padding: 10px 15px;
   border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
   box-sizing: border-box;
-  height: 40px; /* Match height with the button */
+  height: 38px; /* Match height with the button */
+  justify-content: center;
 }
 
-.search-container button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-left: none; /* Removes the border between input and button */
-  padding: 10px; /* Adjust padding to fit the input height */
-  cursor: pointer;
-  border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
-  box-sizing: border-box;
-  height: 40px; /* Match height with the input */
-}
+.search-container button { 
+    -ms-flex-align: baseline;
+    background-color: #0db123;
+    border: 1px solid #ccc;
+    border-left: none; /* Removes the border between input and button */
+    padding: 10px 15px; /* Adjust padding to fit the input height */
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
+    box-sizing: border-box;
+    height: 38px; /* Match height with the input */
+    margin: 0px 0px 10px;
+  }
 
 .nav-links {
   display: flex;
   justify-content: center; /* Centers the navigation links */
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   flex: 1;
 }
 
@@ -702,13 +705,4 @@ header {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-}
-.search-bar {
-  /* Ensure the container has enough width */
-  width: 300px; /* Adjust as needed */
-}
-.search-bar input, .search-bar button {
-  /* Adjust height and padding as needed */
-  height: 40px;
-  padding: 0 10px;
 }
