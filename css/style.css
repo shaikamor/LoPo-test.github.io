@@ -634,48 +634,51 @@ footer {
     width: 100%;
     bottom: 0;
 }
+/* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #4CAF50; /* Replace with Flipkart's header color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-  
-  .search-bar {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  
-  .search-bar input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-  }
-  
-  .search-bar button {
-    background-color: #4CAF50;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  .actions {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .actions a {
-    text-decoration: none;
-    color: #333;
-  }  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #2874f0; /* Flipkart's header color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 40px;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.search-bar button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+.actions a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
