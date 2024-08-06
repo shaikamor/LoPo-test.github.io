@@ -663,7 +663,7 @@ header {
   padding: 10px;
   border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
   box-sizing: border-box;
-  height: 38px; /* Match height with the button */
+  height: 40px; /* Match height with the button */
 }
 
 .search-container button {
@@ -674,7 +674,7 @@ header {
   cursor: pointer;
   border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
   box-sizing: border-box;
-  height: 38px; /* Match height with the input */
+  height: 40px; /* Match height with the input */
 }
 
 .nav-links {
