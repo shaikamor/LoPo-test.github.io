@@ -639,7 +639,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #fff; /* Replace with Flipkart's header color */
+    background-color: #4CAF50; /* Replace with Flipkart's header color */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -664,7 +664,7 @@ header {
   }
   
   .search-bar button {
-    background-color: #f0f0f0;
+    background-color: #4CAF50;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
