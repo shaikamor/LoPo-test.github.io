@@ -649,14 +649,14 @@ header {
   height: 40px;
 }
 
-.search-bar {
+.search-container {
   flex: 1;
   display: flex;
   align-items: center;
   margin: 0 20px;
 }
 
-.search-bar input {
+.search-container input {
   flex: 1;
   border: 1px solid #ccc;
   outline: none;
@@ -666,11 +666,11 @@ header {
   height: 38px; /* Match height with the button */
 }
 
-.search-bar button {
+.search-container button {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-left: none; /* Removes the border between input and button */
-  padding: 9px 15px; /* Adjust padding to fit the input height */
+  padding: 9px 10px; /* Adjust padding to fit the input height */
   cursor: pointer;
   border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
   box-sizing: border-box;
