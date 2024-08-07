@@ -641,7 +641,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
   padding: 15px;
-  background-color: #2874f0; /* Flipkart's header color */
+  background-color: #4CAF50; /* Flipkart's header color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
