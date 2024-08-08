@@ -4,46 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - My Food & Grocery App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>My Food & Grocery App</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="category/vegetables.html">Vegetables</a></li>
-                <li><a href="category/fruits.html">Fruits</a></li>
-                <li><a href="category/groceries.html">Groceries</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="form-container">
+    <div class="login-container">
+        <div class="login-box">
             <h2>Register</h2>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <p class="password-rules">Password must contain at least one uppercase letter, one number, one special character, and be between 8-15 characters long.</p>
+                </div>
                 <button type="submit">Register</button>
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
             </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 My Food & Grocery App. All rights reserved.</p>
-    </footer>
+        </div>
+    </div>
+    <script src="register.js"></script>
 </body>
 </html>
-
