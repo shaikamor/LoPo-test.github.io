@@ -4,35 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - My Food & Grocery App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
             <h2 id="formTitle">Sign In</h2>
-            <form id="loginForm">
-                <div class="input-group" id="fullNameGroup">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div class="input-group" id="emailGroup">
+            
+            <!-- Email and Password Login Form -->
+            <form id="emailPasswordForm">
+                <div class="input-group">
                     <label for="email">Email ID</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                <div class="input-group" id="phoneNumberGroup">
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p>Or</p>
+                <p><a href="#" id="loginWithOtpLink">Login with OTP</a></p>
+            </form>
+
+            <!-- OTP Login Form (Initially Hidden) -->
+            <form id="otpForm" style="display: none;">
+                <div class="input-group">
                     <label for="phoneNumber">Phone Number</label>
                     <input type="tel" id="phoneNumber" name="phoneNumber" required>
                 </div>
-                <div class="input-group otp-group" id="otpGroup" style="display:none;">
+                <button type="button" id="sendOtpButton">Send OTP</button>
+
+                <div class="input-group otp-group" id="otpGroup" style="display: none;">
                     <label for="otp">Enter OTP</label>
                     <input type="text" id="otp" name="otp" maxlength="4" required>
                 </div>
-                <button type="button" id="sendOtpButton">Send OTP</button>
-                <button type="submit" id="loginButton" style="display:none;">Login</button>
-                 <p id="signupRedirect">Not an existing user? <a href="register.html">Sign up</a></p>
+                <button type="submit" id="submitOtpButton" style="display: none;">Login</button>
             </form>
+
+            <p id="signupRedirect">Not an existing user? <a href="register.html">Sign up</a></p>
         </div>
     </div>
-    <script src="js/test-login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
