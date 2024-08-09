@@ -4,71 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account - My Food & Grocery App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="account.css">
 </head>
 <body>
+    <!-- Header with Brand Logo and Navigation -->
     <header>
         <a href="index.html">
-            <img src="assest/logo.png" alt="Brand Logo" id="brand-logo">
+            <img src="assets/logo.png" alt="Brand Logo" id="brand-logo">
         </a>
     </header>
     
     <main>
         <section id="account-section">
-            <div id="account-content">
-                <!-- Login/Register Section -->
-                <div id="login-register-section" style="display: none;">
-                    <h2>Login</h2>
-                <li><a href="login.html">Login</a></li>
+            <div id="sidebar">
+                <h2 id="user-name">Shaik Thaheer</h2>
+                <p id="user-contact">6302934692 · shaikamor@gmail.com</p>
+                <nav id="account-nav">
+                    <ul>
+                        <li><a href="#" onclick="loadContent('account-details.html')">Account Details</a></li>
+                        <li><a href="#" onclick="loadContent('orders')">My Orders</a></li>
+                        <li><a href="#" onclick="loadContent('security')">Security</a></li>
+                        <li><a href="#" onclick="loadContent('help-support')">Help & Support</a></li>
+                    </ul>
+                </nav>
+                <button id="logoutButton">Logout</button>
+            </div>
 
-                <!-- User Account Details Section -->
-                <div id="user-account-details" style="display: none;">
-                    <h2>Account Details</h2>
-                    <p id="welcome-message">Welcome, User!</p>
-                    <form id="personalDetailsForm">
-                        <div class="input-group">
-                            <label for="editFullName">Full Name</label>
-                            <input type="text" id="editFullName" name="editFullName" value="John Doe">
-                        </div>
-                        <div class="input-group">
-                            <label for="editEmail">Email ID</label>
-                            <input type="email" id="editEmail" name="editEmail" value="john.doe@example.com">
-                        </div>
-                        <div class="input-group">
-                            <label for="editPhoneNumber">Phone Number</label>
-                            <input type="tel" id="editPhoneNumber" name="editPhoneNumber" value="+1234567890">
-                        </div>
-                        <button type="button" id="saveChangesButton">Save Changes</button>
-                    </form>
-                    <button id="logoutButton">Logout</button>
-                </div>
-                
-                <!-- Orders Section -->
-                <div id="orders-section" style="display: none;">
-                    <h2>My Orders</h2>
-                    <p>No orders yet.</p>
-                </div>
-
-                <!-- Security Section -->
-                <div id="security-section" style="display: none;">
-                    <h2>Security</h2>
-                    <button type="button" id="changePasswordButton">Change Password</button>
-                </div>
-
-                <!-- Help & Support Section -->
-                <div id="help-support-section" style="display: none;">
-                    <h2>Help & Support</h2>
-                    <a href="help.html">Visit Help Center</a>
-                    <a href="chat.html">Chat Support</a>
-                </div>
+            <!-- Main Content Area for each section -->
+            <div id="main-content">
+                <!-- This will be populated by the respective section -->
+                <h2>Welcome to Your Account</h2>
+                <p>Select an option from the menu to view details.</p>
             </div>
         </section>
     </main>
-
+    
     <footer>
         <p>&copy; 2024 My Food & Grocery App. All rights reserved.</p>
     </footer>
 
-    <script src="js/account.js"></script>
+    <script src="account.js"></script>
+    <script src="account.json"></script>
 </body>
 </html>
