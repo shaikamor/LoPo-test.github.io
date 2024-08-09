@@ -1,61 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginSection = document.getElementById('login-register-section');
-    const accountDetailsSection = document.getElementById('user-account-details');
-    const ordersSection = document.getElementById('orders-section');
-    const securitySection = document.getElementById('security-section');
-    const helpSupportSection = document.getElementById('help-support-section');
-    
-    // Simulating user login state
-    const isLoggedIn = false; // Change this to true if the user is logged in
+function loadContent(section) {
+    const mainContent = document.getElementById('main-content');
 
-    if (isLoggedIn) {
-        loginSection.style.display = 'none';
-        accountDetailsSection.style.display = 'block';
-        ordersSection.style.display = 'block';
-        securitySection.style.display = 'block';
-        helpSupportSection.style.display = 'block';
-    } else {
-        loginSection.style.display = 'block';
-        accountDetailsSection.style.display = 'none';
-        ordersSection.style.display = 'none';
-        securitySection.style.display = 'none';
-        helpSupportSection.style.display = 'none';
-    }
-document.getElementById('sendOtpButton').addEventListener('click', function() {
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-
-    if (fullName && email && phoneNumber) {
-        // Simulate sending OTP
-        alert('OTP sent to ' + phoneNumber);
-
-        // Show OTP input field and Login button
-        document.querySelector('.otp-group').style.display = 'block';
-        document.getElementById('sendOtpButton').style.display = 'none';
-        document.getElementById('loginButton').style.display = 'block';
-    } else {
-        alert('Please fill all fields');
-    }
-});
-    // Handle login form submission
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Here you would handle the actual login logic, including OTP verification
-        // For now, just simulate a successful login
-        loginSection.style.display = 'none';
-        accountDetailsSection.style.display = 'block';
-        ordersSection.style.display = 'block';
-        securitySection.style.display = 'block';
-        helpSupportSection.style.display = 'block';
+    // Clear active class from all links
+    document.querySelectorAll('#account-nav ul li a').forEach(link => {
+        link.classList.remove('active');
     });
 
-    // Handle logout
-    document.getElementById('logoutButton').addEventListener('click', function () {
-        loginSection.style.display = 'block';
-        accountDetailsSection.style.display = 'none';
-        ordersSection.style.display = 'none';
-        securitySection.style.display = 'none';
-        helpSupportSection.style.display = 'none';
-    });
-});
+    // Add active class to the clicked link
+    const clickedLink = document.querySelector(`#account-nav ul li a[onclick*="${section}"]`);
+    clickedLink.classList.add('active');
+
+    // Use AJAX to fetch data
+    fetch(`data/${section}.json`)
+        .then(response => response.json())
+        .then(data => {
+            switch(section) {
+                case 'account-details':
+                    mainContent.innerHTML = `
+                        <h2>Account Details</h2>
+                        <p>Name: ${data.name}</p>
+                        <p>Email: ${data.email}</p>
+                        <p>Phone: ${data.phone}</p>
+                    `;
+                    break;
+                case 'orders':
+                    mainContent.innerHTML = `
+                        <h2>My Orders</h2>
+                        <ul>${data.orders.map(order => `<li>${order}</li>`).join('')}</ul>
+                    `;
+                    break;
+                case 'security':
+                    mainContent.innerHTML = `
+                        <h2>Security</h2>
+                        <p>Password Last Updated: ${data.passwordLastUpdated}</p>
+                    `;
+                    break;
+                case 'help-support':
+                    mainContent.innerHTML = `
+                        <h2>Help & Support</h2>
+                        <p>${data.supportMessage}</p>
+                    `;
+                    break;
+                default:
+                    mainContent.innerHTML = `
+                        <h2>Welcome to the Account</h2>
+                        <p>Please select a section from the left to view its details.</p>
+                    `;
+                    break;
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
