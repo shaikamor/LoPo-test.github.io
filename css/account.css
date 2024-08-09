@@ -1,0 +1,155 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+header img#brand-logo {
+    max-height: 60px;
+}
+
+/* Account Section */
+#account-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#sidebar p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#account-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#account-nav ul li {
+    margin-bottom: 15px;
+}
+
+#account-nav ul li a {
+    text-decoration: none;
+    padding: 12px;
+    display: block;
+    color: #1a73e8;
+    background-color: #e9f0fb;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#account-nav ul li a:hover,
+#account-nav ul li a.active {
+    background-color: #d7e2f1;
+    color: #1a73e8;
+}
+
+#logoutButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+#logoutButton:hover {
+    background-color: #ff1a1a;
+}
+
+/* Main Content Area */
+#main-content {
+    flex-grow: 1;
+    padding: 20px 40px;
+    background-color: #f8f9fa;
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+#main-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+#main-content p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* User Info Top Bar */
+#user-info-bar {
+    background-color: #f2f6fc;
+    padding: 20px;
+    border-bottom: 1px solid #dfe1e5;
+    text-align: left;
+    border-radius: 10px 10px 0 0;
+}
+
+#user-info-bar h2 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+}
+
+#user-info-bar p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 0 0 10px 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+#account-nav ul li a.active {
+    background-color: #d7e2f1;
+    color: #1a73e8;
+}
